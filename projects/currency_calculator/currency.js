@@ -2,7 +2,7 @@ const select = document.querySelectorAll("select")
 const input = document.querySelectorAll("input")
 const button = document.querySelectorAll("button")
 const info = document.getElementById("info")
-const API_URL = "http://api.exchangeratesapi.io/v1/latest?access_key=6b4630918628295ab240bf7da2f2adf1&format=1"
+const API_URL = "https://v6.exchangerate-api.com/v6/b40f56927cfa75afd423b1ca/latest/USD"
 let html = ""
  
 
@@ -10,8 +10,8 @@ let html = ""
 async function currency(){
     const res =await fetch(API_URL)
     const data = await res.json()
-    const arrkeys = Object.keys(data.rates)
-    const rates = data.rates
+    const arrkeys = Object.keys(data.conversion_rates)
+    const rates = data.conversion_rates
 
 
     arrkeys.map(item =>{
